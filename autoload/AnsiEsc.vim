@@ -26,18 +26,29 @@ endif
 let s:keepcpo= &cpo
 set cpo&vim
 
+if ! exists('#User#AnsiEscEnabled')
+    autocmd User AnsiEscEnabled :
+    autocmd User AnsiEscDisabled :
+endif
+
 " ---------------------------------------------------------------------
 " AnsiEsc#AnsiEsc: toggles ansi-escape code visualization {{{2
 fun! AnsiEsc#AnsiEsc(rebuild)
 "  call Dfunc("AnsiEsc#AnsiEsc(rebuild=".a:rebuild.")")
+  let bn= bufnr("%")
+  if !exists("s:AnsiEsc_enabled_{bn}")
+   let s:AnsiEsc_enabled_{bn}= 0
+  endif
   if a:rebuild
+    if s:AnsiEsc_enabled_{bn}
 "   call Decho("rebuilding AnsiEsc tables")
    call AnsiEsc#AnsiEsc(0)   " toggle AnsiEsc off
    call AnsiEsc#AnsiEsc(0)   " toggle AnsiEsc back on
 "   call Dret("AnsiEsc#AnsiEsc")
+   doautocmd User AnsiEscEnabled
+   endif
    return
   endif
-  let bn= bufnr("%")
   if !exists("s:AnsiEsc_enabled_{bn}")
    let s:AnsiEsc_enabled_{bn}= 0
   endif
@@ -64,6 +75,7 @@ fun! AnsiEsc#AnsiEsc(rebuild)
     let &l:hl= s:hlkeep_{bufnr("%")}
    endif
 "   call Dret("AnsiEsc#AnsiEsc")
+   doautocmd User AnsiEscDisabled
    return
   else
    let s:AnsiEsc_ft_{bn}      = &ft
@@ -1172,6 +1184,7 @@ fun! AnsiEsc#AnsiEsc(rebuild)
    hi ansiWhiteWhite        ctermfg=white      ctermbg=white      guifg=White      guibg=White    cterm=none         gui=none
   endif
 "  call Dret("AnsiEsc#AnsiEsc")
+   doautocmd User AnsiEscEnabled
 endfun
 
 " ---------------------------------------------------------------------
