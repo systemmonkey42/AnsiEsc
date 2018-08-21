@@ -823,7 +823,11 @@ fun! AnsiEsc#AnsiEsc(rebuild)
    hi ansiWhiteBg           ctermbg=white      guibg=white                                        cterm=none         gui=none
    hi ansiGrayBg            ctermbg=gray       guibg=gray                                         cterm=none         gui=none
 
-   hi ansiBlackFg           ctermfg=black      guifg=black                                        cterm=none         gui=none
+   if &background ==? 'dark'
+       hi ansiBlackFg           ctermfg=white      guifg=white                                        cterm=none         gui=none
+   else
+       hi ansiBlackFg           ctermfg=black      guifg=black                                        cterm=none         gui=none
+   endif
    hi ansiRedFg             ctermfg=red        guifg=red                                          cterm=none         gui=none
    hi ansiGreenFg           ctermfg=green      guifg=green                                        cterm=none         gui=none
    hi ansiYellowFg          ctermfg=yellow     guifg=yellow                                       cterm=none         gui=none
@@ -1037,7 +1041,11 @@ fun! AnsiEsc#AnsiEsc(rebuild)
    hi ansiCyanBg            ctermbg=cyan       guibg=cyan                                         cterm=none         gui=none
    hi ansiWhiteBg           ctermbg=white      guibg=white                                        cterm=none         gui=none
 
-   hi ansiBlackFg           ctermfg=black      guifg=black                                        cterm=none         gui=none
+   if &background ==? 'dark'
+       hi ansiBlackFg           ctermfg=white      guifg=white                                        cterm=none         gui=none
+   else
+       hi ansiBlackFg           ctermfg=black      guifg=black                                        cterm=none         gui=none
+   endif
    hi ansiRedFg             ctermfg=red        guifg=red                                          cterm=none         gui=none
    hi ansiGreenFg           ctermfg=green      guifg=green                                        cterm=none         gui=none
    hi ansiYellowFg          ctermfg=yellow     guifg=yellow                                       cterm=none         gui=none
