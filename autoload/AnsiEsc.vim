@@ -130,7 +130,7 @@ fun! AnsiEsc#AnsiEsc(rebuild)
    syn match ansiConceal		contained		"\e\[\(\d*;\)*\d*m\|\e\[K"
   endif
 
-  syn region ansiNone		start="\e\[[01;]m"  skip='\e\[K' end="\e\["me=e-2 contains=ansiConceal
+  syn region ansiNone		start="\e\[[0-9;]*m"  skip='\e\[K' end="\e\["me=e-2 contains=ansiConceal
   syn region ansiNone		start="\e\[m"       skip='\e\[K' end="\e\["me=e-2 contains=ansiConceal
   syn region ansiNone		start="\e\[\%(0;\)\=39;49m"  skip='\e\[K' end="\e\["me=e-2 contains=ansiConceal
   syn region ansiNone		start="\e\[\%(0;\)\=49;39m"  skip='\e\[K' end="\e\["me=e-2 contains=ansiConceal
