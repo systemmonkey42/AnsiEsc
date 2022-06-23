@@ -506,7 +506,7 @@ fun! AnsiEsc#AnsiEsc(rebuild)
    hi link ansiFgRedWhite	ansiRedWhite
 
    syn cluster AnsiGreenFgGroup contains=ansiFgGreenBlack,ansiFgGreenRed,ansiFgGreenGreen,ansiFgGreenYellow,ansiFgGreenBlue,ansiFgGreenMagenta,ansiFgGreenCyan,ansiFgGreenWhite
-   syn region ansiGreenFg	concealends matchgroup=ansiNone start="\e\[;\=0\{0,2};\=\%(1;\)\=32\%(;1\)\=m" skip='\e\[K' end="\ze\e\[\([1-7]\=;\)\=[03]\dm"  contains=@AnsiGreenFgGroup,ansiConceal
+   syn region ansiGreenFg	concealends matchgroup=ansiNone start="\e\[;\=0\{0,2};\=\%(1;\)\=32\%(;1\)\=m" skip='\e\[K' end="\ze\e\[\([1-7]\=;\)\=[03]\d*m"  contains=@AnsiGreenFgGroup,ansiConceal
    syn region ansiFgGreenBlack	contained	start="\e\[40m" skip='\e\[K' end="\ze\e\[[04m]" contains=ansiConceal
    syn region ansiFgGreenRed	contained	start="\e\[41m" skip='\e\[K' end="\ze\e\[[04m]" contains=ansiConceal
    syn region ansiFgGreenGreen	contained	start="\e\[42m" skip='\e\[K' end="\ze\e\[[04m]" contains=ansiConceal
@@ -533,7 +533,7 @@ fun! AnsiEsc#AnsiEsc(rebuild)
    hi link ansiFgGreenWhite	ansiGreenWhite
 
    syn cluster AnsiYellowFgGroup contains=ansiFgYellowBlack,ansiFgYellowRed,ansiFgYellowGreen,ansiFgYellowYellow,ansiFgYellowBlue,ansiFgYellowMagenta,ansiFgYellowCyan,ansiFgYellowWhite,cecJUNK
-   syn region ansiYellowFg	concealends matchgroup=ansiNone start="\e\[;\=0\{0,2};\=\%(1;\)\=33\%(;1\)\=m" skip='\e\[K' end="\ze\e\[\([1-7]\=;\)\=[03]\dm"  contains=@AnsiYellowFgGroup,ansiConceal
+   syn region ansiYellowFg	concealends matchgroup=ansiNone start="\e\[;\=0\{0,2};\=\%(1;\)\=33\%(;1\)\=m" skip='\e\[K' end="\ze\e\[\([1-7]\=;\)\=[03]\d*m"  contains=@AnsiYellowFgGroup,ansiConceal
    syn region ansiFgYellowBlack	contained	start="\e\[40m" skip='\e\[K' end="\ze\e\[[04m]" contains=ansiConceal
    syn region ansiFgYellowRed	contained	start="\e\[41m" skip='\e\[K' end="\ze\e\[[04m]" contains=ansiConceal
    syn region ansiFgYellowGreen	contained	start="\e\[42m" skip='\e\[K' end="\ze\e\[[04m]" contains=ansiConceal
@@ -560,7 +560,7 @@ fun! AnsiEsc#AnsiEsc(rebuild)
    hi link ansiFgYellowWhite	ansiYellowWhite
 
    syn cluster AnsiBlueFgGroup contains=ansiFgBlueBlack,ansiFgBlueRed,ansiFgBlueGreen,ansiFgBlueYellow,ansiFgBlueBlue,ansiFgBlueMagenta,ansiFgBlueCyan,ansiFgBlueWhite
-   syn region ansiBlueFg	concealends matchgroup=ansiNone start="\e\[;\=0\{0,2};\=\%(1;\)\=34\%(;1\)\=m" skip='\e\[K' end="\ze\e\[\([1-7]\=;\)\=[03]\dm"  contains=@AnsiBlueFgGroup,ansiConceal
+   syn region ansiBlueFg	concealends matchgroup=ansiNone start="\e\[;\=0\{0,2};\=\%(1;\)\=34\%(;1\)\=m" skip='\e\[K' end="\ze\e\[\([1-7]\=;\)\=[03]\d*m"  contains=@AnsiBlueFgGroup,ansiConceal
    syn region ansiFgBlueBlack	contained	start="\e\[40m" skip='\e\[K' end="\ze\e\[[04m]" contains=ansiConceal
    syn region ansiFgBlueRed	contained	start="\e\[41m" skip='\e\[K' end="\ze\e\[[04m]" contains=ansiConceal
    syn region ansiFgBlueGreen	contained	start="\e\[42m" skip='\e\[K' end="\ze\e\[[04m]" contains=ansiConceal
@@ -587,7 +587,7 @@ fun! AnsiEsc#AnsiEsc(rebuild)
    hi link ansiFgBlueWhite	ansiBlueWhite
 
    syn cluster AnsiMagentaFgGroup contains=ansiFgMagentaBlack,ansiFgMagentaRed,ansiFgMagentaGreen,ansiFgMagentaYellow,ansiFgMagentaBlue,ansiFgMagentaMagenta,ansiFgMagentaCyan,ansiFgMagentaWhite
-   syn region ansiMagentaFg	concealends matchgroup=ansiNone start="\e\[;\=0\{0,2};\=\%(1;\)\=35\%(;1\)\=m" skip='\e\[K' end="\ze\e\[\([1-7]\=;\)\=[03]\dm"  contains=@AnsiMagentaFgGroup,ansiConceal
+   syn region ansiMagentaFg	concealends matchgroup=ansiNone start="\e\[;\=0\{0,2};\=\%(1;\)\=35\%(;1\)\=m" skip='\e\[K' end="\ze\e\[\([1-7]\=;\)\=[03]\d*m"  contains=@AnsiMagentaFgGroup,ansiConceal
    syn region ansiFgMagentaBlack	contained	start="\e\[40m" skip='\e\[K' end="\ze\e\[[04m]" contains=ansiConceal
    syn region ansiFgMagentaRed	contained	start="\e\[41m" skip='\e\[K' end="\ze\e\[[04m]" contains=ansiConceal
    syn region ansiFgMagentaGreen	contained	start="\e\[42m" skip='\e\[K' end="\ze\e\[[04m]" contains=ansiConceal
@@ -614,7 +614,7 @@ fun! AnsiEsc#AnsiEsc(rebuild)
    hi link ansiFgMagentaWhite	ansiMagentaWhite
 
    syn cluster AnsiCyanFgGroup contains=ansiFgCyanBlack,ansiFgCyanRed,ansiFgCyanGreen,ansiFgCyanYellow,ansiFgCyanBlue,ansiFgCyanMagenta,ansiFgCyanCyan,ansiFgCyanWhite
-   syn region ansiCyanFg	concealends matchgroup=ansiNone start="\e\[;\=0\{0,2};\=\%(1;\)\=36\%(;1\)\=m" skip='\e\[K' end="\ze\e\[\([1-7]\=;\)\=[03]\dm"  contains=@AnsiCyanFgGroup,ansiConceal
+   syn region ansiCyanFg	concealends matchgroup=ansiNone start="\e\[;\=0\{0,2};\=\%(1;\)\=36\%(;1\)\=m" skip='\e\[K' end="\ze\e\[\([1-7]\=;\)\=[03]\d*m"  contains=@AnsiCyanFgGroup,ansiConceal
    syn region ansiFgCyanBlack	contained	start="\e\[40m" skip='\e\[K' end="\ze\e\[[04m]" contains=ansiConceal
    syn region ansiFgCyanRed	contained	start="\e\[41m" skip='\e\[K' end="\ze\e\[[04m]" contains=ansiConceal
    syn region ansiFgCyanGreen	contained	start="\e\[42m" skip='\e\[K' end="\ze\e\[[04m]" contains=ansiConceal
@@ -641,7 +641,7 @@ fun! AnsiEsc#AnsiEsc(rebuild)
    hi link ansiFgCyanWhite	ansiCyanWhite
 
    syn cluster AnsiWhiteFgGroup contains=ansiFgWhiteBlack,ansiFgWhiteRed,ansiFgWhiteGreen,ansiFgWhiteYellow,ansiFgWhiteBlue,ansiFgWhiteMagenta,ansiFgWhiteCyan,ansiFgWhiteWhite
-   syn region ansiWhiteFg	concealends matchgroup=ansiNone start="\e\[;\=0\{0,2};\=\%(1;\)\=37\%(;1\)\=m" skip='\e\[K' end="\ze\e\[\([1-7]\=;\)\=[03]\dm"  contains=@AnsiWhiteFgGroup,ansiConceal
+   syn region ansiWhiteFg	concealends matchgroup=ansiNone start="\e\[;\=0\{0,2};\=\%(1;\)\=37\%(;1\)\=m" skip='\e\[K' end="\ze\e\[\([1-7]\=;\)\=[03]\d*m"  contains=@AnsiWhiteFgGroup,ansiConceal
    syn region ansiFgWhiteBlack	contained	start="\e\[40m" skip='\e\[K' end="\ze\e\[[04m]" contains=ansiConceal
    syn region ansiFgWhiteRed	contained	start="\e\[41m" skip='\e\[K' end="\ze\e\[[04m]" contains=ansiConceal
    syn region ansiFgWhiteGreen	contained	start="\e\[42m" skip='\e\[K' end="\ze\e\[[04m]" contains=ansiConceal
