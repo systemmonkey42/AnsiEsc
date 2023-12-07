@@ -117,6 +117,7 @@ fun! AnsiEsc#AnsiEsc(rebuild)
    syn match ansiSuppress	conceal	'\e\[?\d*[^m]'
    syn match ansiSuppress	conceal	'\b'
    syn match ansiSuppress	conceal	'\e\[2[234]m'
+   syn match ansiSuppress	conceal	'\e\[\%([1-4];\)\=[1-4]m'
   else
    syn match ansiSuppress		'\e\[[0-9;]*[^m]'
    syn match ansiSuppress		'\e\[?\d*[^m]'
