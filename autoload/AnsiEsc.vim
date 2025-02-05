@@ -172,6 +172,7 @@ fun! AnsiEsc#AnsiEsc(rebuild)
   syn region ansiBoldMagenta	start="\e\[;\=0\{0,2};\=\%(1;35\|35;0*1\)m" skip='\e\[K' end="\ze\e\[" contains=ansiConceal
   syn region ansiBoldCyan	start="\e\[;\=0\{0,2};\=\%(1;36\|36;0*1\)m" skip='\e\[K' end="\ze\e\[" contains=ansiConceal
   syn region ansiBoldWhite	start="\e\[;\=0\{0,2};\=\%(1;37\|37;0*1\)m" skip='\e\[K' end="\ze\e\[" contains=ansiConceal
+  syn region ansiBoldWhite	start="\e\[;\=0\{0,2};\=\%(1;39\|37;0*1\)m" skip='\e\[K' end="\ze\e\[" contains=ansiConceal
   syn region ansiBoldGray	start="\e\[;\=0\{0,2};\=\%(1;90\|90;0*1\)m" skip='\e\[K' end="\ze\e\[" contains=ansiConceal
 
   syn region ansiStandoutBlack	start="\e\[;\=0\{0,2};\=\%(1;\)\=\%(3;30\|30;0*3\)m" skip='\e\[K' end="\ze\e\[" contains=ansiConceal
